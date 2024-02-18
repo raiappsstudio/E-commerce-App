@@ -4,43 +4,29 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
-import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity {
+public class Products extends AppCompatActivity {
 
-    GridView gridView;
-    TextView btproductall;
+    GridView gridViewproduct;
+
 
 
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        gridView = findViewById(R.id.gridView);
-        btproductall = findViewById(R.id.btproductall);
+        setContentView(R.layout.activity_products);
 
-        Myadapter myAdapter = new Myadapter();
-        gridView.setAdapter(myAdapter);
+        gridViewproduct = findViewById(R.id.gridViewproduct);
 
-
-        btproductall.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                Intent myIntent = new Intent(MainActivity.this, Products.class);
-                startActivity(myIntent);
-
-
-            }
-        });
+        Myadapter myAdapter= new Myadapter();
+        gridViewproduct.setAdapter(myAdapter);
 
 
 
@@ -49,12 +35,12 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    //=====homme page gride view adapter==========start==========
-    private class Myadapter extends BaseAdapter{
+
+    private class Myadapter extends BaseAdapter {
 
         @Override
         public int getCount() {
-            return 10;
+            return 100;
         }
 
         @Override
@@ -80,8 +66,6 @@ public class MainActivity extends AppCompatActivity {
             return myview;
         }
     }
-    //=====homme page gride view adapter==========end==========
-
 
 
 }

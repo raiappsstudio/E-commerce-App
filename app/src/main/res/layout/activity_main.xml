@@ -1,18 +1,176 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    android:background="#C5E6FF"
+   android:padding="3dp"
+    >
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:src="@drawable/coverphoto"
+        android:scaleType="centerCrop"/>
+
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="Category"
+        android:padding="5dp"
+        android:textSize="25dp"
+        android:textColor="#FF5722"
+        android:textStyle="bold"
+        />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+    //===category button here======start============================
+
+    <HorizontalScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        >
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Smartphones"
+            android:padding="5dp"
+            android:background="@drawable/bottom_curved"
+            android:layout_marginRight="5dp"
+            android:gravity="center"
+
+            />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Laptops"
+            android:padding="5dp"
+            android:background="@drawable/bottom_curved"
+            android:layout_marginRight="5dp"
+            android:gravity="center"
+
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="skincare"
+            android:padding="5dp"
+            android:background="@drawable/bottom_curved"
+            android:layout_marginRight="5dp"
+            android:gravity="center"
+
+            />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mobile"
+            android:padding="5dp"
+            android:background="@drawable/bottom_curved"
+            android:layout_marginRight="5dp"
+            android:gravity="center"
+
+            />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Laptops"
+            android:padding="5dp"
+            android:background="@drawable/bottom_curved"
+            android:layout_marginRight="5dp"
+            android:gravity="center"
+
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="skincare"
+            android:padding="5dp"
+            android:background="@drawable/bottom_curved"
+            android:layout_marginRight="5dp"
+            android:gravity="center"
+            />
+
+
+
+    </LinearLayout>
+
+
+    </HorizontalScrollView>
+
+    //category button here======end============================
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bottom_curved"
+        android:padding="5dp"
+        android:layout_marginTop="5dp"
+        >
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Populer Product"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            />
+
+
+        <TextView
+            android:id="@+id/btproductall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="see all"
+            android:textStyle="bold"
+            android:textColor="#00FF0A"
+            android:textSize="20dp"
+            android:layout_alignParentRight="true"
+            android:paddingRight="3dp"
+            />
+
+
+
+    </RelativeLayout>
+
+
+
+
+<GridView
+    android:id="@+id/gridView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:numColumns="2"
+    tools:listitem="@layout/productitem"
+    />
+
+
+
+
+
+
+
+</LinearLayout>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Products"
+    android:orientation="vertical"
+    android:background="#C5E6FF"
+    >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="All Product here "
+        android:padding="5dp"
+        android:textSize="25dp"
+        android:textColor="#FF5722"
+        android:textStyle="bold"
+        />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/redius"
+        android:layout_margin="5dp"
+
+        >
+
+
+        <EditText
+            android:id="@+id/edsearch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15dp"
+            android:hint="Product name search here"
+            />
+
+
+        <TextView
+            android:id="@+id/btproductall"
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:text="Search"
+            android:textStyle="bold"
+            android:layout_alignRight="@+id/edsearch"
+            android:background="@drawable/redius"
+            android:gravity="center"
+            android:backgroundTint="#00E409"
+            android:clickable="true"
+
+            />
+
+
+
+    </RelativeLayout>
+
+
+
+    <GridView
+        android:id="@+id/gridViewproduct"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:numColumns="2"
+        tools:listitem="@layout/productitem"
+        />
+
+
+</LinearLayout>
