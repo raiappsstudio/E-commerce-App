@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ProductDetails"
+    android:orientation="vertical"
+    android:background="#FFFFFF"
+    android:padding="10dp"
+    >
+
+
+    <TextView
+        android:id="@+id/tvDtitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textSize="25dp"
+        android:background="#fff"
+        android:text="This is a Product title"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="5dp">
+
+        <TextView
+            android:id="@+id/tvDbrand"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textStyle="bold"
+            android:text="Brand: apple" />
+
+        <TextView
+            android:id="@+id/tvDrating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Rating: 4.9"
+            android:textColor="#FF9900"
+            android:textStyle="bold" />
+
+
+
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:src="@drawable/coverphoto"
+        android:scaleType="centerCrop"
+        />
+
+    <TextView
+        android:id="@+id/tvDcat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        android:text="Category"
+        android:layout_marginTop="10dp"
+        />
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="5dp"
+        >
+
+
+        <TextView
+            android:id="@+id/tvDprice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:text="Price: 546" />
+
+        <TextView
+            android:id="@+id/tvDstock"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="94 in aStock"
+            android:textStyle="bold"
+            android:layout_alignParentRight="true"
+            />
+
+
+
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        android:text="Deshcription"
+        android:layout_marginTop="10dp"
+        />
+
+
+    <TextView
+        android:id="@+id/tvDesh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SIM-Free, Model A19211 6.5-inch Super Retina HD display with OLED technology A12 Bionic chip with" />
+
+
+
+
+
+</LinearLayout>
