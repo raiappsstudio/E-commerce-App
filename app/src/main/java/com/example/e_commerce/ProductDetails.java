@@ -6,12 +6,28 @@ import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import com.denzcoskun.imageslider.ImageSlider;
+import com.denzcoskun.imageslider.models.SlideModel;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+
+import java.util.ArrayList;
+
 public class ProductDetails extends AppCompatActivity {
 
     TextView tvDtitle, tvDbrand, tvDrating, tvDcat,tvDprice , tvDstock, tvDesh;
-
-
     public static String TITLE, BRAND, RATING, CAT, PRICE, STOCK, DESH = "";
+
+
+
+    ////kahani of image slider====
+    ImageSlider image_slider;
+    public static String IMAGEARRAY="";
+    ArrayList <SlideModel> imageList = new ArrayList<>();
+
+
+
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -29,6 +45,28 @@ public class ProductDetails extends AppCompatActivity {
 
 
 
+        //kahani of image slider====
+        image_slider = findViewById(R.id.image_slider);
+        try {
+            JSONArray jsonArray = new JSONArray(IMAGEARRAY);
+            if (jsonArray.length()>0){
+                JSONArray imageURLArray = jsonArray.getJSONArray(0);
+                for ( int i=0; i<imageURLArray.length();i++){
+                    String imageURL = imageURLArray.getString(i);
+                    imageList.add( new SlideModel(imageURL,null));
+                }
+            }
+
+        } catch (JSONException e) {
+            throw new RuntimeException(e);
+        }
+        image_slider.setImageList(imageList);
+
+        //kahani of image slider====
+
+
+
+
 
         tvDtitle.setText(TITLE);
         tvDbrand.setText("Brand: "+BRAND);
@@ -37,6 +75,13 @@ public class ProductDetails extends AppCompatActivity {
         tvDprice.setText("Price: "+PRICE);
         tvDstock.setText(STOCK+" in a Stock");
         tvDesh.setText(DESH);
+
+
+
+
+
+
+
 
 
 

@@ -30,6 +30,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 
 public class Products extends AppCompatActivity {
@@ -80,15 +81,12 @@ public class Products extends AppCompatActivity {
                             String thumbnail = jsonObjectRequest1.getString("thumbnail");
 
 
+                            //kahani of image slider======================
+                                String[ ] images = new String[] {jsonObjectRequest1.getString("images")};
+                                String imagesArray = Arrays.toString(images);
 
-                      /*      JSONArray imageArray = jsonObjectRequest1.getJSONArray("images");
-                            for (int i=0; i<imageArray.length(); i++){
 
-                                String imageURL = imageArray.getString(i);
 
-                            }
-
-                       */
 
                                 hashMap = new HashMap<>();
                                 hashMap.put("title", title);
@@ -100,6 +98,9 @@ public class Products extends AppCompatActivity {
                                 hashMap.put("brand", brand);
                                 hashMap.put("category", category);
                                 hashMap.put("thumbnail", thumbnail);
+
+                                hashMap.put("images", imagesArray);  //kahani of image slider====
+
                                 arrayList.add(hashMap);
 
 
@@ -175,6 +176,8 @@ public class Products extends AppCompatActivity {
             String category = hashMap.get("category");
             String thumbnail = hashMap.get("thumbnail");
 
+            String images = hashMap.get("images");   //kahani of image slider====
+
 
             tvTitle.setText(title);
             tvcat.setText(category);
@@ -195,6 +198,7 @@ public class Products extends AppCompatActivity {
                    ProductDetails.STOCK= stock;
                    ProductDetails.CAT= category;
                    ProductDetails.RATING = rating;
+                   ProductDetails.IMAGEARRAY=images;  //kahani of image slider====
 
 
 
